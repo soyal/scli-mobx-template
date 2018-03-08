@@ -1,6 +1,8 @@
 {
-  "name": "rp-shop",
-  "version": "0.1.0",
+  "name": "{{componentName}}",
+  "version": "{{version}}",
+  "description": "{{description}}",
+  "author": "{{author}}",
   "private": true,
   "dependencies": {
     "@fs/async-component": "^1.1.2",

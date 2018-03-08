@@ -163,7 +163,8 @@ module.exports = {
                   importLoaders: 1
                 }
               },
-              require.resolve('postcss-loader')
+              require.resolve('postcss-loader'),
+              require.resolve('less-loader')
             ]
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.
