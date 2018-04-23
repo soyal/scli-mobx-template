@@ -1,9 +1,8 @@
-// import registerServiceWorker from './registerServiceWorker'
 import React from 'react'
 import { render } from 'react-dom'
 import App from './app'
 import { Provider } from 'mobx-react'
-import Store from './store'
+import * as stores from './store'
 import './axios.config'
 
 import './style/index.less'
@@ -16,7 +15,7 @@ const routeStore = new RouterStore()
 const history = syncHistoryWithStore(browserHistory, routeStore)
 
 render(
-  <Provider store={new Store()} routeStore={routeStore}>
+  <Provider {...stores} routeStore={routeStore}>
     <App history={history} />
   </Provider>,
   document.querySelector('#root')

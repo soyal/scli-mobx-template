@@ -56,7 +56,7 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the polyfills and the app code.
-  entry: [require.resolve('./polyfills'), paths.appIndexJs],
+  entry: ['babel-polyfill', paths.appIndexJs],
   output: {
     // The build folder.
     path: paths.appBuild,
@@ -186,7 +186,12 @@ module.exports = {
                       },
                     },
                     require.resolve('postcss-loader'),
-                    require.resolve('less-loader')
+                    {
+                      loader: require.resolve('less-loader'),
+                      options: {
+                        modifyVars: { "@primary-color": "#81D4C6" }
+                      }
+                    }
                   ],
                 },
                 extractTextPluginOptions

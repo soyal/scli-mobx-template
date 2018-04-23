@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import Button from 'components/button'
+import { Link } from 'react-router-dom'
 
 class Index extends Component {
   render() {
     return (
       <div>
         <h2>index</h2>
-        <Button></Button>
+        <Link to="/page1">to Page1</Link>
+        <Link to="/page2">to Page2</Link>
       </div>
     )
   }

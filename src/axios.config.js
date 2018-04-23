@@ -22,6 +22,7 @@ axios.interceptors.response.use(
     return response.data
   },
   err => {
+    console.error(err)
     alert('请求错误')
   }
 )
